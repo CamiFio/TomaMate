@@ -137,3 +137,53 @@ h2 {
 .form-contacto{
     font-size: 15px;
 }
+
+.resenias {
+    padding: 10px;
+}
+
+.resenias h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.resenias-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 10px;
+}
+
+.card-resenia {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    color: black;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card-resenia-header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.card-text {
+    margin: 0;
+}
+
+@media screen and (max-width: 600px) {
+    h2 {
+        font-size: 30px;
+    }
+
+    .productos {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logos-extras {
+        flex-direction: column;
+    }
+}
