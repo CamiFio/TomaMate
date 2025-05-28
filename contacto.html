@@ -40,21 +40,31 @@
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <form class="p-4 shadow rounded bg-light contact-form">
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" id="email" class="form-control" placeholder="tuemail@ejemplo.com" required>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="nombre" class="form-label form-contacto">Nombre</label>
+                            <input type="text" id="nombre" class="form-control" placeholder="John Doe" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="email" class="form-label form-contacto">Email</label>
+                            <input type="email" id="email" class="form-control" placeholder="tuemail@ejemplo.com"
+                                required>
+                        </div>
                     </div>
+
                     <div class="mb-3">
-                        <label for="mensaje" class="form-label">Mensaje</label>
+                        <label for="mensaje" class="form-label form-contacto">Mensaje</label>
                         <textarea id="mensaje" class="form-control" rows="4" placeholder="Escribí tu mensaje..."
                             required></textarea>
                     </div>
+
                     <div class="d-grid">
                         <button type="submit" class="btn btn-primary">Enviar</button>
                     </div>
                 </form>
             </div>
         </div>
+
     </main>
 
 
@@ -62,14 +72,18 @@
         <div class="logo">
             <a href="index.html"><img src="./src/logo.png" alt="logo TomaMate"></a>
         </div>
-        <div>
+        <div class="agradecimiento">
             <p>¡Gracias por elegirnos!</p>
+            <br>
+            <p>Desarrolladora: Camila Fiorotto - 2025 | Email: fiorottocamila@gmail.com</p>
         </div>
         <div class="redes-sociales">
+            <h5>NUESTRAS REDES SOCIALES</h5>
             <div class="iconos-redes">
                 <a href="https://www.instagram.com"><i class="fa-brands fa-instagram"></i></a>
                 <a href="https://www.facebook.com"><i class="fa-brands fa-facebook"></i></a>
             </div>
+            <h5>CONTACTO</h5>
             <ul class="contactos">
                 <li>Tel: 11-1234-5678</li>
                 <li>info@tomamate.com</li>
