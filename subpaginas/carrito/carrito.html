@@ -34,7 +34,7 @@
             <a href="../../contacto.html"><i class="fa-solid fa-envelope"></i></a>
             <div class="carrito-container">
                 <div id="carrito-container">
-                <a href="../../subpaginas/carrito/carrito.html">
+                <a href="carrito.html">
                     <i class="fa-solid fa-cart-shopping" id="icono-carrito"></i>
                 </a>
                 <span class="contador-carrito" id="contador-carrito">0</span>
@@ -46,10 +46,27 @@
 
 
     <!-- Contenedor de productos -->
-    <div class="container my-5">
-        <div id="productos-container" class="row g-4">
-        </div>
+    <div class="carrito-wrapper">
+  <div id="carrito-products" class="carrito-container1"></div>
+
+  <div id="resumen-compra" class="resumen-compra">
+    <h4>Resumen de compra</h4>
+    <div class="linea">
+      <span>Productos (<span id="cantidad-productos">0</span>)</span>
+      <span id="subtotal">$0</span>
     </div>
+    <div class="linea">
+      <span>Envío</span>
+      <span id="envio">$4.248</span>
+    </div>
+    <hr>
+    <div class="linea total">
+      <span>Total</span>
+      <span id="total">$0</span>
+    </div>
+    <button class="btn-continuar" disabled>Continuar compra</button>
+  </div>
+</div>
 
 
     <footer>
@@ -77,7 +94,7 @@
 
     </footer>
     <script src="../../carrito.js"></script>
-    <script type="module" src="mates_app.js"></script>
+    <script src="carrito_app.js"></script>
 </body>
 
 </html>
