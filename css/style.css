@@ -21,6 +21,92 @@ body {
     gap: 15px;
     padding: 25px;
 }
+.carrito-container {
+  position: relative;
+  display: inline-block;
+}
+
+.carrito-container i {
+  color: #ffffff;
+}
+
+#carrito-container{
+    cursor: pointer;
+  transition: transform 0.2s, color 0.2s;
+}
+#carrito-container:hover {
+  transform: scale(1.3);
+}
+
+.contador-carrito {
+  position: absolute;
+  top: -6px;
+  right: -10px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 9px;
+  font-weight: bold;
+  display: none;
+  min-width: 18px;
+  text-align: center;
+}
+
+.dropdown-carrito {
+  display: none;
+  position: absolute;
+  top: 35px;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 280px;
+  box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+  z-index: 100;
+  font-size: 14px;
+}
+
+.item-carrito {
+    color: black;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 6px;
+}
+
+.item-carrito img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  margin-right: 10px;
+  border-radius: 4px;
+}
+
+.item-info {
+  flex: 1;
+}
+
+.item-controles {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.boton-cantidad {
+  background: #007bff;
+  color: black;
+  border: none;
+  padding: 2px 6px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.boton-cantidad:hover {
+  background: #0056b3;
+}
+
 
 header {
     position: sticky;
@@ -82,6 +168,13 @@ h2 {
     object-fit: cover;
     border-radius: 15px;
 }
+
+.product-img {
+  height: 500px;
+  object-fit: cover;
+  width: 100%;
+}
+
 
 .card-producto:hover {
     transform: scale(1.03);
