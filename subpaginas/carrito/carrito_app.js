@@ -30,33 +30,33 @@ function actualizarCarrito() {
     container.appendChild(row);
   });
   // Eventos
-  container.querySelectorAll(".btn-menos").forEach(btn =>
+  container.querySelectorAll(".btn-menos").forEach((btn) =>
     btn.addEventListener("click", () => {
       const index = btn.dataset.index;
       carrito[index].cantidad--;
       if (carrito[index].cantidad <= 0) carrito.splice(index, 1);
       localStorage.setItem("carrito", JSON.stringify(carrito));
       actualizarCarrito();
-    })
+    }),
   );
 
-  container.querySelectorAll(".btn-mas").forEach(btn =>
+  container.querySelectorAll(".btn-mas").forEach((btn) =>
     btn.addEventListener("click", () => {
       const index = btn.dataset.index;
       carrito[index].cantidad++;
       localStorage.setItem("carrito", JSON.stringify(carrito));
       actualizarCarrito();
-    })
+    }),
   );
 
-  container.querySelectorAll(".btn-eliminar").forEach(btn =>
-  btn.addEventListener("click", () => {
-    const index = btn.dataset.index;
-    carrito.splice(index, 1);
-    localStorage.setItem("carrito", JSON.stringify(carrito));
-    actualizarCarrito();
-  })
-);
+  container.querySelectorAll(".btn-eliminar").forEach((btn) =>
+    btn.addEventListener("click", () => {
+      const index = btn.dataset.index;
+      carrito.splice(index, 1);
+      localStorage.setItem("carrito", JSON.stringify(carrito));
+      actualizarCarrito();
+    }),
+  );
   actualizarResumen(carrito);
 }
 
@@ -65,7 +65,10 @@ let resumenRow = null;
 
 function actualizarResumen(carrito) {
   const total_cantidad = carrito.reduce((a, p) => a + p.cantidad, 0);
-  const subtotal_precio = carrito.reduce((a, p) => a + p.cantidad * p.precio, 0);
+  const subtotal_precio = carrito.reduce(
+    (a, p) => a + p.cantidad * p.precio,
+    0,
+  );
 
   if (!resumenRow) {
     resumenRow = document.createElement("div");
@@ -87,11 +90,9 @@ function actualizarResumen(carrito) {
       <span>Total</span>
       <span id="total">$${subtotal_precio.toLocaleString()}</span>
     </div>
-    <button class="btn-continuar" ${total_cantidad === 0 ? 'disabled' : ''}>Continuar compra</button>
+    <button class="btn-continuar" ${total_cantidad === 0 ? "disabled" : ""}>Continuar compra</button>
   `;
 }
-
-
 
 actualizarCarrito();
 actualizarResumen(carrito);

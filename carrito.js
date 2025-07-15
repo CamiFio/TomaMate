@@ -3,7 +3,7 @@ let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
 /* ===== API pública ===== */
 export function agregarAlCarrito(producto) {
-  const yaExiste = carrito.find(item => item.id === producto.id);
+  const yaExiste = carrito.find((item) => item.id === producto.id);
 
   if (yaExiste) {
     yaExiste.cantidad += 1;
@@ -31,7 +31,6 @@ export function actualizarContador() {
     contador.style.display = "none";
   }
 }
-
 
 /* ===== init ===== */
 actualizarContador(); // pinta badge al cargar

@@ -1,12 +1,12 @@
-import { agregarAlCarrito } from '../../carrito.js';
+import { agregarAlCarrito } from "../../carrito.js";
 export function mostrar_productos(productos) {
-    const container = document.getElementById("productos-container");
+  const container = document.getElementById("productos-container");
 
-    productos.forEach(producto => {
-        const col = document.createElement("div");
-        col.className = "col-12 col-sm-6 col-md-4";
+  productos.forEach((producto) => {
+    const col = document.createElement("div");
+    col.className = "col-12 col-sm-6 col-md-4";
 
-        col.innerHTML = `
+    col.innerHTML = `
     <div class="card h-100">
       <img src="${producto.imagen}" class="card-img-top product-img" alt="${producto.nombre}">
       <div class="card-body">
@@ -17,15 +17,15 @@ export function mostrar_productos(productos) {
     </div>
   `;
 
-        // Ahora buscamos el botón dentro del div 'col' que acabamos de crear
-        const botonAgregar = col.querySelector('button.btn-compra');
+    // Ahora buscamos el botón dentro del div 'col' que acabamos de crear
+    const botonAgregar = col.querySelector("button.btn-compra");
 
-        // Agregamos el event listener al botón para agregar el producto correspondiente
-        botonAgregar.addEventListener('click', () => {
-            agregarAlCarrito(producto);
-        });
-
-        // Finalmente agregamos el 'col' al container del DOM
-        container.appendChild(col);
+    // Agregamos el event listener al botón para agregar el producto correspondiente
+    botonAgregar.addEventListener("click", () => {
+      agregarAlCarrito(producto);
     });
+
+    // Finalmente agregamos el 'col' al container del DOM
+    container.appendChild(col);
+  });
 }
