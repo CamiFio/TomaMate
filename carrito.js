@@ -20,7 +20,7 @@ export function obtenerCarrito() {
 }
 
 /* ===== UI ===== */
-function actualizarContador() {
+export function actualizarContador() {
   const contador = document.getElementById("contador-carrito");
   const total = carrito.reduce((a, p) => a + p.cantidad, 0);
 
@@ -31,18 +31,6 @@ function actualizarContador() {
     contador.style.display = "none";
   }
 }
-
-
-/* ===== listeners globales ===== */
-const icono = document.getElementById("icono-carrito");
-const dropdown = document.getElementById("dropdown-carrito");
-
-/* cerrar al hacer click afuera */
-document.addEventListener("click", e => {
-  if (!icono.contains(e.target) && !dropdown.contains(e.target)) {
-    dropdown.style.display = "none";
-  }
-});
 
 
 /* ===== init ===== */

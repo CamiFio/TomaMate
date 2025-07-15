@@ -33,7 +33,14 @@
         <div class="logos-extras">
             <i class="fa-solid fa-magnifying-glass"></i>
             <a href="contacto.html"><i class="fa-solid fa-envelope"></i></a>
-            <i class="fa-solid fa-cart-shopping"></i>
+            <div class="carrito-container">
+                <div id="carrito-container">
+                <a href="../../subpaginas/carrito/carrito.html">
+                    <i class="fa-solid fa-cart-shopping" id="icono-carrito"></i>
+                </a>
+                <span class="contador-carrito" id="contador-carrito">0</span>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -48,7 +55,7 @@
                     </div>
                 </div>
             </a>
-            <a href="./subpaginas/bombillas.html">
+            <a href="./subpaginas/bombillas/bombillas.html">
                 <div class="col">
                     <div class="card-producto">
                         <img src="./src/bombilla.png" class="img-fluid" alt="Bombillas">
@@ -56,7 +63,7 @@
                     </div>
                 </div>
             </a>
-            <a href="./subpaginas/grabados.html">
+            <a href="./subpaginas/grabados/grabados.html">
                 <div class="col">
                     <div class="card-producto">
                         <img src="./src/Grabado.png" class="img-fluid" alt="Grabados">
@@ -64,7 +71,7 @@
                     </div>
                 </div>
             </a>
-            <a href="./subpaginas/yerba.html">
+            <a href="./subpaginas/yerba/yerba.html">
                 <div class="col">
                     <div class="card-producto">
                         <img src="./src/yerba.png" class="img-fluid" alt="Yerba">
@@ -72,7 +79,7 @@
                     </div>
                 </div>
             </a>
-            <a href="./subpaginas/materas.html">
+            <a href="./subpaginas/materas/materas.html">
                 <div class="col">
                     <div class="card-producto">
                         <img src="./src/matera.png" class="img-fluid" alt="Materas">
@@ -80,7 +87,7 @@
                     </div>
                 </div>
             </a>
-            <a href="./subpaginas/termos.html">
+            <a href="./subpaginas/termos/termos.html">
                 <div class="col">
                     <div class="card-producto">
                         <img src="./src/termo.png" class="img-fluid" alt="Termos">
@@ -154,6 +161,7 @@
         </div>
 
     </footer>
+    <script type="module" src="carrito.js"></script>
 </body>
 
 </html>
