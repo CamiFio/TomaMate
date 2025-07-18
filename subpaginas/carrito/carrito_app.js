@@ -1,3 +1,5 @@
+import { limpiarCarrito } from "../../carrito.js";
+
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
 const container = document.getElementById("carrito-products");
@@ -65,15 +67,18 @@ let resumenRow = null;
 
 function actualizarResumen(carrito) {
   const total_cantidad = carrito.reduce((a, p) => a + p.cantidad, 0);
-  const subtotal_precio = carrito.reduce(
-    (a, p) => a + p.cantidad * p.precio,
-    0,
-  );
+  const subtotal_precio = carrito.reduce((a, p) => a + p.cantidad * p.precio, 0);
+
+  console.log("total_cantidad:", total_cantidad);
 
   if (!resumenRow) {
     resumenRow = document.createElement("div");
     container_resumen.appendChild(resumenRow);
+  } else {
+    resumenRow.innerHTML = "";
   }
+
+  const disabledAttr = total_cantidad <= 0 ? "disabled" : "";
 
   resumenRow.innerHTML = `
     <h4>Resumen de compra</h4>
@@ -90,9 +95,40 @@ function actualizarResumen(carrito) {
       <span>Total</span>
       <span id="total">$${subtotal_precio.toLocaleString()}</span>
     </div>
-    <button class="btn-continuar" ${total_cantidad === 0 ? "disabled" : ""}>Continuar compra</button>
+    <button class="btn-continuar" ${disabledAttr}>Continuar compra</button>
   `;
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  document.addEventListener("click", (e) => {
+    if (e.target.classList.contains("btn-continuar")) {
+      document.getElementById("popup-datos-usuario").classList.remove("oculto");
+    }
+
+    if (e.target.id === "cerrarPopup" || e.target.id === "cancelarPopup") {
+      document.getElementById("popup-datos-usuario").classList.add("oculto");
+    } 
+  });
+
+  document.getElementById("formulario-compra").addEventListener("submit", function (e) {
+    const inputCarrito = document.getElementById("input-carrito");
+    const total = carrito.reduce((a, p) => a + p.cantidad * p.precio, 0);
+    let carritoTexto = carrito
+      .map(item => `Producto: ${item.nombre}, Cantidad: ${item.cantidad}, Precio: $${item.precio}`)
+      .join("\n");
+
+    carritoTexto += `\nTotal: $${total}`;
+    inputCarrito.value = carritoTexto;
+    limpiarCarrito();
+    actualizarCarrito();
+    actualizarResumen();
+  });
+});
+
+
+
+
+
 
 actualizarCarrito();
 actualizarResumen(carrito);

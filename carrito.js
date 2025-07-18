@@ -48,7 +48,10 @@ function mostrarPopup(mensaje = "Producto añadido al carrito") {
   }, 3000);
 }
 
-
+export function limpiarCarrito(){
+  localStorage.setItem("carrito", JSON.stringify([]));
+  actualizarContador();
+}
 /* ===== init ===== */
 actualizarContador(); // pinta badge al cargar
 // ----------------------------------------------------

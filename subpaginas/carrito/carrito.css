@@ -135,14 +135,20 @@
   width: 100%;
   margin-top: 16px;
   padding: 10px;
-  background-color: #ccc;
+  background-color: #3483fa;
   color: #fff;
   border: none;
   border-radius: 6px;
   font-weight: bold;
   font-size: 15px;
+  cursor: pointer;
+}
+
+.btn-continuar:disabled {
+  background-color: #ccc;
   cursor: not-allowed;
 }
+
 
 .botonera button:hover {
   background-color: #2968c8;
@@ -153,3 +159,69 @@
   font-size: 18px;
   color: #111;
 }
+
+.popup-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  
+}
+
+.oculto {
+  display: none;
+}
+.popup-contenido h3 {
+   font-family: "Corinthia", cursive;
+  text-align: center;
+  font-size: 60px;
+  color: rgb(0, 0, 0);
+}
+
+.popup-contenido {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  position: relative;
+  color: #000;
+}
+
+.popup-cerrar {
+  position: absolute;
+  top: 10px;
+  right: 16px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+
+.popup-contenido form label {
+  display: block;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.popup-contenido form input {
+  width: 100%;
+  padding: 8px 10px;
+  margin-top: 4px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.botones-popup {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 20px;
+}
+
