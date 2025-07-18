@@ -13,6 +13,7 @@ export function agregarAlCarrito(producto) {
 
   localStorage.setItem("carrito", JSON.stringify(carrito));
   actualizarContador();
+  mostrarPopup();
 }
 
 export function obtenerCarrito() {
@@ -31,6 +32,22 @@ export function actualizarContador() {
     contador.style.display = "none";
   }
 }
+
+function mostrarPopup(mensaje = "Producto añadido al carrito") {
+  const container = document.getElementById("popup-container");
+
+  const toast = document.createElement("div");
+  toast.className = "popup";
+  toast.textContent = mensaje;
+
+  container.appendChild(toast);
+
+  // Eliminar el toast luego de 3 segundos
+  setTimeout(() => {
+    toast.remove();
+  }, 3000);
+}
+
 
 /* ===== init ===== */
 actualizarContador(); // pinta badge al cargar

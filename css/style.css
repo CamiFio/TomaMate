@@ -83,6 +83,36 @@ body {
   background: #0056b3;
 }
 
+#popup-container {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  display: flex;
+  flex-direction: column-reverse; /* para que el nuevo aparezca abajo */
+  gap: 10px;
+  z-index: 1000;
+}
+
+.popup {
+  background-color: #2ecc71;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  opacity: 1;
+  animation: fadeOut 0.5s ease-in-out 2.5s forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: translateX(50%);
+  }
+}
+
+
+
 header {
   position: sticky;
   top: 0;
