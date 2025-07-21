@@ -284,3 +284,98 @@ h2 {
     flex-direction: column;
   }
 }
+
+.hamburger {
+  display: none;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+
+nav ul.productos {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    background: none;
+    border: none;
+    margin-left: auto;
+    z-index: 1001;
+    position: relative;
+  }
+
+  nav {
+    width: 100%;
+    position: relative;
+  }
+
+  nav ul.productos {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    width: 100%;
+    padding: 10px 0;
+    z-index: 1000;
+    max-height: 90vh;
+    overflow-y: auto;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+  }
+
+  nav ul.productos.show {
+    display: flex;
+  }
+
+  nav ul.productos li {
+    padding: 10px 20px;
+    text-align: left;
+  }
+
+  nav ul.productos li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+  }
+
+  .logos-extras {
+    margin-top: 10px;
+    z-index: 1001;
+  }
+
+  header {
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1001;
+  }
+}
+
+.solo-mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .solo-mobile {
+    display: block;
+  }
+
+  .logos-extras {
+    display: none;
+  }
+}
+

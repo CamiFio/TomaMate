@@ -10,6 +10,7 @@ function actualizarCarrito() {
   const row = document.createElement("div");
   row.innerHTML = `<h4><em>Aún no agregaste nada. Elegí tus productos favoritos para verlos acá</em></h4>`;
   container.appendChild(row);
+  actualizarResumen(carrito);
   return; 
 }
   
