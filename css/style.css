@@ -99,7 +99,7 @@ body {
   padding: 12px 20px;
   border-radius: 8px;
   font-size: 14px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   opacity: 1;
   animation: fadeOut 0.5s ease-in-out 2.5s forwards;
 }
@@ -110,8 +110,6 @@ body {
     transform: translateX(50%);
   }
 }
-
-
 
 header {
   position: sticky;
@@ -293,7 +291,6 @@ h2 {
   margin-left: auto;
 }
 
-
 nav ul.productos {
   display: flex;
   gap: 20px;
@@ -301,7 +298,6 @@ nav ul.productos {
   padding: 0;
   margin: 0;
 }
-
 
 @media (max-width: 768px) {
   .hamburger {
@@ -378,4 +374,3 @@ nav ul.productos {
     display: none;
   }
 }
-

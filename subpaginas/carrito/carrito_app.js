@@ -7,13 +7,12 @@ const container = document.getElementById("carrito-products");
 function actualizarCarrito() {
   container.innerHTML = "";
   if (carrito.length === 0) {
-  const row = document.createElement("div");
-  row.innerHTML = `<h4><em>Aún no agregaste nada. Elegí tus productos favoritos para verlos acá</em></h4>`;
-  container.appendChild(row);
-  actualizarResumen(carrito);
-  return; 
-}
-  
+    const row = document.createElement("div");
+    row.innerHTML = `<h4><em>Aún no agregaste nada. Elegí tus productos favoritos para verlos acá</em></h4>`;
+    container.appendChild(row);
+    actualizarResumen(carrito);
+    return;
+  }
 
   carrito.forEach((producto, index) => {
     const row = document.createElement("div");
@@ -75,7 +74,10 @@ let resumenRow = null;
 
 function actualizarResumen(carrito) {
   const total_cantidad = carrito.reduce((a, p) => a + p.cantidad, 0);
-  const subtotal_precio = carrito.reduce((a, p) => a + p.cantidad * p.precio, 0);
+  const subtotal_precio = carrito.reduce(
+    (a, p) => a + p.cantidad * p.precio,
+    0,
+  );
 
   console.log("total_cantidad:", total_cantidad);
 
@@ -115,28 +117,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (e.target.id === "cerrarPopup" || e.target.id === "cancelarPopup") {
       document.getElementById("popup-datos-usuario").classList.add("oculto");
-    } 
+    }
   });
 
-  document.getElementById("formulario-compra").addEventListener("submit", function (e) {
-    const inputCarrito = document.getElementById("input-carrito");
-    const total = carrito.reduce((a, p) => a + p.cantidad * p.precio, 0);
-    let carritoTexto = carrito
-      .map(item => `Producto: ${item.nombre}, Cantidad: ${item.cantidad}, Precio: $${item.precio}`)
-      .join("\n");
+  document
+    .getElementById("formulario-compra")
+    .addEventListener("submit", function (e) {
+      const inputCarrito = document.getElementById("input-carrito");
+      const total = carrito.reduce((a, p) => a + p.cantidad * p.precio, 0);
+      let carritoTexto = carrito
+        .map(
+          (item) =>
+            `Producto: ${item.nombre}, Cantidad: ${item.cantidad}, Precio: $${item.precio}`,
+        )
+        .join("\n");
 
-    carritoTexto += `\nTotal: $${total}`;
-    inputCarrito.value = carritoTexto;
-    limpiarCarrito();
-    actualizarCarrito();
-    actualizarResumen();
-  });
+      carritoTexto += `\nTotal: $${total}`;
+      inputCarrito.value = carritoTexto;
+      limpiarCarrito();
+      actualizarCarrito();
+      actualizarResumen();
+    });
 });
-
-
-
-
-
 
 actualizarCarrito();
 actualizarResumen(carrito);

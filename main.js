@@ -1,3 +1,3 @@
 function toggleMenu() {
-    document.getElementById("menu").classList.toggle("show");
-  }
+  document.getElementById("menu").classList.toggle("show");
+}

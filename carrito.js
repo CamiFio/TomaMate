@@ -48,7 +48,7 @@ function mostrarPopup(mensaje = "Producto añadido al carrito") {
   }, 3000);
 }
 
-export function limpiarCarrito(){
+export function limpiarCarrito() {
   localStorage.setItem("carrito", JSON.stringify([]));
   actualizarContador();
 }

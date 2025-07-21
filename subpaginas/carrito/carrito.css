@@ -1,4 +1,4 @@
-#carrito-products h4{
+#carrito-products h4 {
   color: rgb(118, 112, 112);
   justify-content: center;
   align-items: center;
@@ -159,7 +159,6 @@
   cursor: not-allowed;
 }
 
-
 .botonera button:hover {
   background-color: #2968c8;
 }
@@ -181,14 +180,13 @@
   align-items: center;
   justify-content: center;
   z-index: 999;
-  
 }
 
 .oculto {
   display: none;
 }
 .popup-contenido h3 {
-   font-family: "Corinthia", cursive;
+  font-family: "Corinthia", cursive;
   text-align: center;
   font-size: 60px;
   color: rgb(0, 0, 0);
@@ -213,7 +211,6 @@
   cursor: pointer;
 }
 
-
 .popup-contenido form label {
   display: block;
   margin-bottom: 12px;
@@ -234,4 +231,3 @@
   gap: 10px;
   margin-top: 20px;
 }
-
