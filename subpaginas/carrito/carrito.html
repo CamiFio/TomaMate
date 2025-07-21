@@ -17,8 +17,10 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./css/style.css" />
-    <title>Tienda Online - TomaMate - Contacto</title>
+    <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="stylesheet" href="carrito.css" />
+
+    <title>Tienda Online - TomaMate - Carrito</title>
   </head>
 
   <body>
@@ -33,17 +35,17 @@
 
       <nav>
         <ul class="productos" id="menu">
-          <li><a href="./subpaginas/mates/mates.html">Mates</a></li>
-          <li><a href="./subpaginas/bombillas/bombillas.html">Bombillas</a></li>
-          <li><a href="./subpaginas/grabados/grabados.html">Grabados</a></li>
-          <li><a href="./subpaginas/yerba/yerba.html">Yerba</a></li>
-          <li><a href="./subpaginas/materas/materas.html">Materas</a></li>
-          <li><a href="./subpaginas/termos/termos.html">Termos</a></li>
+          <li><a href="../mates/mates.html">Mates</a></li>
+          <li><a href="../bombillas/bombillas.html">Bombillas</a></li>
+          <li><a href="../grabados/grabados.html">Grabados</a></li>
+          <li><a href="../yerba/yerba.html">Yerba</a></li>
+          <li><a href="../materas/materas.html">Materas</a></li>
+          <li><a href="../termos/termos.html">Termos</a></li>
           <li class="solo-mobile">
             <a href="../../contacto.html">Contacto</a>
           </li>
           <li class="solo-mobile">
-            <a href="./subpaginas/carrito/carrito.html">Carrito</a>
+            <a href="../carrito/carrito.html">Carrito</a>
           </li>
         </ul>
       </nav>
@@ -52,7 +54,7 @@
         <a href="../../contacto.html"><i class="fa-solid fa-envelope"></i></a>
         <div class="carrito-container">
           <div id="carrito-container">
-            <a href="./subpaginas/carrito/carrito.html">
+            <a href="../carrito/carrito.html">
               <i class="fa-solid fa-cart-shopping" id="icono-carrito"></i>
             </a>
             <span class="contador-carrito" id="contador-carrito">0</span>
@@ -61,61 +63,54 @@
       </div>
     </header>
 
-    <main class="container my-5">
-      <h2 class="text-center mb-4">¡Contactanos!</h2>
-      <div class="row justify-content-center">
-        <div class="col-md-6">
-          <form
-            class="p-4 shadow rounded bg-light contact-form"
-            action="https://formspree.io/f/mkgrdkqv"
-            method="POST"
-          >
-            <div class="row">
-              <div class="col-md-6 mb-3">
-                <label class="form-label form-contacto"> Nombre </label>
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="John Doe"
-                  required
-                  name="name"
-                />
-              </div>
-              <div class="col-md-6 mb-3">
-                <label class="form-label form-contacto">Email</label>
-                <input
-                  type="email"
-                  class="form-control"
-                  placeholder="tuemail@ejemplo.com"
-                  required
-                  name="email"
-                />
-              </div>
-            </div>
+    <!-- Contenedor de productos -->
+    <h2>¡Ya casi son tuyos!</h2>
+    <div class="carrito-wrapper">
+      <div id="carrito-products" class="carrito-container1"></div>
 
-            <div class="mb-3">
-              <label class="form-label form-contacto">Mensaje</label>
-              <textarea
-                class="form-control"
-                rows="4"
-                placeholder="Escribí tu mensaje..."
-                required
-                name="mensaje"
-              ></textarea>
-            </div>
-
-            <div class="d-grid">
-              <button type="submit" class="btn btn-primary">Enviar</button>
-            </div>
-          </form>
-        </div>
+      <div id="resumen-compra" class="resumen-compra"></div>
+    </div>
+    <div id="popup-datos-usuario" class="popup-modal oculto">
+      <div class="popup-contenido">
+        <span id="cerrarPopup" class="popup-cerrar">&times;</span>
+        <h3>Completar datos</h3>
+        <form
+          id="formulario-compra"
+          class="p-4 shadow rounded bg-light contact-form"
+          action="https://formspree.io/f/mgvzvrnd"
+          method="POST"
+        >
+          <label
+            >Nombre:
+            <input type="text" name="nombre" required />
+          </label>
+          <label
+            >Email:
+            <input type="email" name="email" required />
+          </label>
+          <label
+            >Dirección:
+            <input type="text" name="direccion" required />
+          </label>
+          <label
+            >Teléfono:
+            <input type="tel" name="telefono" required />
+          </label>
+          <input type="hidden" name="carrito" id="input-carrito" />
+          <div class="botones-popup">
+            <button type="submit" class="btn btn-success">Confirmar</button>
+            <button type="button" id="cancelarPopup" class="btn btn-secondary">
+              Cancelar
+            </button>
+          </div>
+        </form>
       </div>
-    </main>
+    </div>
 
     <footer>
       <div class="logo">
-        <a href="index.html"
-          ><img src="./src/logo.png" alt="logo TomaMate"
+        <a href="../../index.html"
+          ><img src="../../src/logo.png" alt="logo TomaMate"
         /></a>
       </div>
       <div class="agradecimiento">
@@ -144,6 +139,8 @@
         </ul>
       </div>
     </footer>
-    <script src="main.js"></script>
+    <script type="module" src="../../carrito.js"></script>
+    <script src="../../main.js"></script>
+    <script type="module" src="carrito_app.js"></script>
   </body>
 </html>
