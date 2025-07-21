@@ -38,7 +38,7 @@ function actualizarCarrito() {
 
     container.appendChild(row);
   });
-  // Eventos
+  
   container.querySelectorAll(".btn-menos").forEach((btn) =>
     btn.addEventListener("click", () => {
       const index = btn.dataset.index;

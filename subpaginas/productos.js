@@ -16,16 +16,12 @@ export function mostrar_productos(productos) {
       </div>
     </div>
   `;
-
-    // Ahora buscamos el botón dentro del div 'col' que acabamos de crear
     const botonAgregar = col.querySelector("button.btn-compra");
 
-    // Agregamos el event listener al botón para agregar el producto correspondiente
     botonAgregar.addEventListener("click", () => {
       agregarAlCarrito(producto);
     });
 
-    // Finalmente agregamos el 'col' al container del DOM
     container.appendChild(col);
   });
 }

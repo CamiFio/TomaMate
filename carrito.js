@@ -1,7 +1,5 @@
-// -------------------- carrito.js --------------------
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-/* ===== API pública ===== */
 export function agregarAlCarrito(producto) {
   const yaExiste = carrito.find((item) => item.id === producto.id);
 
@@ -20,7 +18,6 @@ export function obtenerCarrito() {
   return carrito;
 }
 
-/* ===== UI ===== */
 export function actualizarContador() {
   const contador = document.getElementById("contador-carrito");
   const total = carrito.reduce((a, p) => a + p.cantidad, 0);
@@ -42,7 +39,6 @@ function mostrarPopup(mensaje = "Producto añadido al carrito") {
 
   container.appendChild(toast);
 
-  // Eliminar el toast luego de 3 segundos
   setTimeout(() => {
     toast.remove();
   }, 3000);
@@ -52,6 +48,6 @@ export function limpiarCarrito() {
   localStorage.setItem("carrito", JSON.stringify([]));
   actualizarContador();
 }
-/* ===== init ===== */
-actualizarContador(); // pinta badge al cargar
-// ----------------------------------------------------
+
+actualizarContador(); 
+
