@@ -6,6 +6,13 @@ const container = document.getElementById("carrito-products");
 
 function actualizarCarrito() {
   container.innerHTML = "";
+  if (carrito.length === 0) {
+  const row = document.createElement("div");
+  row.innerHTML = `<h4><em>Aún no agregaste nada. Elegí tus productos favoritos para verlos acá</em></h4>`;
+  container.appendChild(row);
+  return; 
+}
+  
 
   carrito.forEach((producto, index) => {
     const row = document.createElement("div");
