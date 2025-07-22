@@ -30,7 +30,7 @@ export function actualizarContador() {
   }
 }
 
-function mostrarPopup(mensaje = "Producto añadido al carrito") {
+export function mostrarPopup(mensaje = "Producto añadido al carrito") {
   const container = document.getElementById("popup-container");
 
   const toast = document.createElement("div");
@@ -49,5 +49,4 @@ export function limpiarCarrito() {
   actualizarContador();
 }
 
-actualizarContador(); 
-
+actualizarContador();

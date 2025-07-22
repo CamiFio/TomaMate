@@ -1,3 +1,4 @@
+import { mostrarPopup } from "../../carrito.js";
 import { limpiarCarrito } from "../../carrito.js";
 
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
@@ -5,6 +6,9 @@ let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 const container = document.getElementById("carrito-products");
 
 function actualizarCarrito() {
+  let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+  const container = document.getElementById("carrito-products");
   container.innerHTML = "";
   if (carrito.length === 0) {
     const row = document.createElement("div");
@@ -38,7 +42,7 @@ function actualizarCarrito() {
 
     container.appendChild(row);
   });
-  
+
   container.querySelectorAll(".btn-menos").forEach((btn) =>
     btn.addEventListener("click", () => {
       const index = btn.dataset.index;
@@ -78,8 +82,6 @@ function actualizarResumen(carrito) {
     (a, p) => a + p.cantidad * p.precio,
     0,
   );
-
-  console.log("total_cantidad:", total_cantidad);
 
   if (!resumenRow) {
     resumenRow = document.createElement("div");
@@ -136,7 +138,8 @@ document.addEventListener("DOMContentLoaded", () => {
       inputCarrito.value = carritoTexto;
       limpiarCarrito();
       actualizarCarrito();
-      actualizarResumen();
+      document.getElementById("popup-datos-usuario").classList.add("oculto");
+      mostrarPopup("Gracias por su compra!");
     });
 });
 
