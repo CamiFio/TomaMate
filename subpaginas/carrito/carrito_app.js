@@ -134,7 +134,7 @@ document.addEventListener("DOMContentLoaded", () => {
       inputCarrito.value = carritoTexto;
       limpiarCarrito();
       actualizarCarrito();
-      let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+      carrito = JSON.parse(localStorage.getItem("carrito")) || [];
       actualizarResumen(carrito);
     });
 });
