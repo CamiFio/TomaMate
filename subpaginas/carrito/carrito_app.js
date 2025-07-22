@@ -79,8 +79,6 @@ function actualizarResumen(carrito) {
     0,
   );
 
-  console.log("total_cantidad:", total_cantidad);
-
   if (!resumenRow) {
     resumenRow = document.createElement("div");
     container_resumen.appendChild(resumenRow);
@@ -136,7 +134,7 @@ document.addEventListener("DOMContentLoaded", () => {
       inputCarrito.value = carritoTexto;
       limpiarCarrito();
       actualizarCarrito();
-      actualizarResumen();
+      actualizarResumen([]);
     });
 });
 
