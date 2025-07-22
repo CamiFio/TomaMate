@@ -1,3 +1,4 @@
+import { mostrarPopup } from "../../carrito.js";
 import { limpiarCarrito } from "../../carrito.js";
 
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
@@ -138,6 +139,7 @@ document.addEventListener("DOMContentLoaded", () => {
       limpiarCarrito();
       actualizarCarrito();
       document.getElementById("popup-datos-usuario").classList.add("oculto");
+      mostrarPopup("Gracias por su compra!");
     });
 });
 
