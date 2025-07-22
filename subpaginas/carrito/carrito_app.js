@@ -5,6 +5,9 @@ let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 const container = document.getElementById("carrito-products");
 
 function actualizarCarrito() {
+  let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+  const container = document.getElementById("carrito-products");
   container.innerHTML = "";
   if (carrito.length === 0) {
     const row = document.createElement("div");
@@ -134,8 +137,6 @@ document.addEventListener("DOMContentLoaded", () => {
       inputCarrito.value = carritoTexto;
       limpiarCarrito();
       actualizarCarrito();
-      carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-      actualizarResumen(carrito);
     });
 });
 
