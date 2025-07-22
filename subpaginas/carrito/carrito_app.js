@@ -137,6 +137,7 @@ document.addEventListener("DOMContentLoaded", () => {
       inputCarrito.value = carritoTexto;
       limpiarCarrito();
       actualizarCarrito();
+      document.getElementById("popup-datos-usuario").classList.add("oculto");
     });
 });
 
