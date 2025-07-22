@@ -1,4 +1,4 @@
-import { agregarAlCarrito } from "../../carrito.js";
+import { agregarAlCarrito } from "/TomaMate/carrito.js";
 export function mostrar_productos(productos) {
   const container = document.getElementById("productos-container");
 
