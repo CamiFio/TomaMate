@@ -63,50 +63,55 @@
       </div>
     </header>
 
-    <!-- Contenedor de productos -->
-    <h2>¡Ya casi son tuyos!</h2>
-    <div class="carrito-wrapper">
-      <div id="carrito-products" class="carrito-container1"></div>
+    <main class="container my-5">
+      <!-- Contenedor de productos -->
+      <h2>¡Ya casi son tuyos!</h2>
+      <div class="carrito-wrapper">
+        <div id="carrito-products" class="carrito-container1"></div>
 
-      <div id="resumen-compra" class="resumen-compra"></div>
-    </div>
-    <div id="popup-datos-usuario" class="popup-modal oculto">
-      <div class="popup-contenido">
-        <span id="cerrarPopup" class="popup-cerrar">&times;</span>
-        <h3>Completar datos</h3>
-        <form
-          id="formulario-compra"
-          class="p-4 shadow rounded bg-light contact-form"
-          action="https://formspree.io/f/mgvzvrnd"
-          method="POST"
-        >
-          <label
-            >Nombre:
-            <input type="text" name="nombre" required />
-          </label>
-          <label
-            >Email:
-            <input type="email" name="email" required />
-          </label>
-          <label
-            >Dirección:
-            <input type="text" name="direccion" required />
-          </label>
-          <label
-            >Teléfono:
-            <input type="tel" name="telefono" required />
-          </label>
-          <input type="hidden" name="carrito" id="input-carrito" />
-          <div class="botones-popup">
-            <button type="submit" class="btn btn-success">Confirmar</button>
-            <button type="button" id="cancelarPopup" class="btn btn-secondary">
-              Cancelar
-            </button>
-          </div>
-        </form>
+        <div id="resumen-compra" class="resumen-compra"></div>
       </div>
-    </div>
-
+      <div id="popup-datos-usuario" class="popup-modal oculto">
+        <div class="popup-contenido">
+          <span id="cerrarPopup" class="popup-cerrar">&times;</span>
+          <h3>Completar datos</h3>
+          <form
+            id="formulario-compra"
+            class="p-4 shadow rounded bg-light contact-form"
+            action="https://formspree.io/f/mgvzvrnd"
+            method="POST"
+          >
+            <label
+              >Nombre:
+              <input type="text" name="nombre" required />
+            </label>
+            <label
+              >Email:
+              <input type="email" name="email" required />
+            </label>
+            <label
+              >Dirección:
+              <input type="text" name="direccion" required />
+            </label>
+            <label
+              >Teléfono:
+              <input type="tel" name="telefono" required />
+            </label>
+            <input type="hidden" name="carrito" id="input-carrito" />
+            <div class="botones-popup">
+              <button type="submit" class="btn btn-success">Confirmar</button>
+              <button
+                type="button"
+                id="cancelarPopup"
+                class="btn btn-secondary"
+              >
+                Cancelar
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
     <footer>
       <div class="logo">
         <a href="../../index.html"

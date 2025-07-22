@@ -42,7 +42,7 @@ function actualizarCarrito() {
 
     container.appendChild(row);
   });
-  
+
   container.querySelectorAll(".btn-menos").forEach((btn) =>
     btn.addEventListener("click", () => {
       const index = btn.dataset.index;

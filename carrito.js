@@ -49,5 +49,4 @@ export function limpiarCarrito() {
   actualizarContador();
 }
 
-actualizarContador(); 
-
+actualizarContador();
